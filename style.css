@@ -1,0 +1,113 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 24px 16px;
+    background-color: #183b56;
+    color: white;
+}
+
+header h1 {
+    margin: 0 0 8px;
+}
+
+header p {
+    margin: 0;
+}
+
+main {
+    padding: 24px 0;
+}
+
+#image {
+    width: 90%;
+    max-width: 900px;
+    min-height: 320px;
+    margin: 0 auto 24px;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: #263746;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    font-size: 1.2rem;
+}
+
+.gallery {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.preview {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 4px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.preview:hover {
+    transform: scale(1.03);
+}
+
+.preview:focus {
+    outline: 4px solid #005fcc;
+    outline-offset: 3px;
+}
+
+footer {
+    text-align: center;
+    padding: 16px;
+    background-color: #183b56;
+    color: white;
+}
+
+@media screen and (max-width: 650px) {
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .preview {
+        height: 150px;
+    }
+
+    #image {
+        min-height: 230px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .preview {
+        height: 200px;
+    }
+}
